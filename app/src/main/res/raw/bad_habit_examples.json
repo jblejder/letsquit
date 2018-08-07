@@ -1,0 +1,532 @@
+{
+  "habits": [
+    {
+      "name": "Swearing"
+    },
+    {
+      "name": "Trichotillomania"
+    },
+    {
+      "name": "Picking Your Nose"
+    },
+    {
+      "name": "Smoking Cigarettes"
+    },
+    {
+      "name": "Biting Fingernails"
+    },
+    {
+      "name": "Drinking Coffee"
+    },
+    {
+      "name": "Drinking Tea"
+    },
+    {
+      "name": "Hair picking"
+    },
+    {
+      "name": "Watching Reality Television"
+    },
+    {
+      "name": "Eating Fast Food"
+    },
+    {
+      "name": "Alcohol (if you think you may be an alcoholic, please get professional help)"
+    },
+    {
+      "name": "Emotional Shopping"
+    },
+    {
+      "name": "Spending On Credit Cards"
+    },
+    {
+      "name": "Facebook"
+    },
+    {
+      "name": "Twitter"
+    },
+    {
+      "name": "Reddit"
+    },
+    {
+      "name": "Eating Candy"
+    },
+    {
+      "name": "Eating White Sugar"
+    },
+    {
+      "name": "Eating Chocolate"
+    },
+    {
+      "name": "Drinking Soda/Pop"
+    },
+    {
+      "name": "Obsessively Checking iPhone/iPad"
+    },
+    {
+      "name": "Eating Meat"
+    },
+    {
+      "name": "Video Games"
+    },
+    {
+      "name": "Cracking Your Knuckles"
+    },
+    {
+      "name": "Speaking With Your Mouth Full"
+    },
+    {
+      "name": "Talking To Yourself"
+    },
+    {
+      "name": "Using Slang"
+    },
+    {
+      "name": "Eating Dairy"
+    },
+    {
+      "name": "Eating Gluten"
+    },
+    {
+      "name": "Picking Your Teeth In Public"
+    },
+    {
+      "name": "Forgetting To Shave"
+    },
+    {
+      "name": "Going To The Club"
+    },
+    {
+      "name": "Using Your Maiden Name"
+    },
+    {
+      "name": "Humming To Yourself"
+    },
+    {
+      "name": "Excessive Salt"
+    },
+    {
+      "name": "All Work And No Play"
+    },
+    {
+      "name": "Chewing Gum"
+    },
+    {
+      "name": "Smoking eCigarettes"
+    },
+    {
+      "name": "Biting Your Pen"
+    },
+    {
+      "name": "Nibbling While Cooking"
+    },
+    {
+      "name": "Overspending"
+    },
+    {
+      "name": "Overeating"
+    },
+    {
+      "name": "Snacking"
+    },
+    {
+      "name": "Hair Picking"
+    },
+    {
+      "name": "Skin Picking"
+    },
+    {
+      "name": "Not Holding Eye Contact"
+    },
+    {
+      "name": "Interrupting Someone"
+    },
+    {
+      "name": "Sleeping-in"
+    },
+    {
+      "name": "Skipping The Gym"
+    },
+    {
+      "name": "Smoking"
+    },
+    {
+      "name": "Saying “Ummm” And “Ahhh”"
+    },
+    {
+      "name": "Porn Watching"
+    },
+    {
+      "name": "Staying Up Late"
+    },
+    {
+      "name": "Sleeping With Makeup"
+    },
+    {
+      "name": "Lying"
+    },
+    {
+      "name": "Overmedicating"
+    },
+    {
+      "name": "Playing Kingdom Rush"
+    },
+    {
+      "name": "Eating Too Fast / Not Chewing"
+    },
+    {
+      "name": "Skipping Breakfast"
+    },
+    {
+      "name": "Not Protecting Yourself From The Sun"
+    },
+    {
+      "name": "Not Moisturizing"
+    },
+    {
+      "name": "Not Flossing"
+    },
+    {
+      "name": "Not Brushing Your Teeth"
+    },
+    {
+      "name": "Using Your Phone In Bed"
+    },
+    {
+      "name": "Negative Self Talk / Self Criticism"
+    },
+    {
+      "name": "Saying “Yes” To Everything"
+    },
+    {
+      "name": "Day Dreaming"
+    },
+    {
+      "name": "Procrastinating"
+    },
+    {
+      "name": "Using Devices At Night"
+    },
+    {
+      "name": "Spending Too Much Time Online"
+    },
+    {
+      "name": "Breaking Promises To Yourself"
+    },
+    {
+      "name": "Rambling"
+    },
+    {
+      "name": "Checking Your Hair / Eyebrows / Makeup / Nails"
+    },
+    {
+      "name": "Watching T.V Right After Work"
+    },
+    {
+      "name": "Repeating Yourself"
+    },
+    {
+      "name": "Forgetting What You’ve Told Someone"
+    },
+    {
+      "name": "Forgetting Names Of People You Meet"
+    },
+    {
+      "name": "Giving Away “Tells” In Poker"
+    },
+    {
+      "name": "Falling Asleep In Class"
+    },
+    {
+      "name": "Slouching At The Computer"
+    },
+    {
+      "name": "Slouching While Walking"
+    },
+    {
+      "name": "Masturbating"
+    },
+    {
+      "name": "Eating Past 8 P.M"
+    },
+    {
+      "name": "Letting Fear Stop You From Trying Something New"
+    },
+    {
+      "name": "Telling Secrets"
+    },
+    {
+      "name": "Talking In Class"
+    },
+    {
+      "name": "Gaming In Class"
+    },
+    {
+      "name": "Online Surfing In Class"
+    },
+    {
+      "name": "Losing Focus"
+    },
+    {
+      "name": "Sitting Too Close To The T.V"
+    },
+    {
+      "name": "Eating Cookies Every Damn Day"
+    },
+    {
+      "name": "Arranging Instead of Cleaning"
+    },
+    {
+      "name": "Picking Fights"
+    },
+    {
+      "name": "Being Unfriendly"
+    },
+    {
+      "name": "Leaving Your Wallet / Keys In Random Places"
+    },
+    {
+      "name": "Skipping Class"
+    },
+    {
+      "name": "Skipping Work"
+    },
+    {
+      "name": "Not Doing Your Homework"
+    },
+    {
+      "name": "Drinking Energy Drinks"
+    },
+    {
+      "name": "Pinching Pennies"
+    },
+    {
+      "name": "Spitting"
+    },
+    {
+      "name": "Horking"
+    },
+    {
+      "name": "Licking Your Lips"
+    },
+    {
+      "name": "Drinking From The Carton"
+    },
+    {
+      "name": "Leaving The Fridge Open"
+    },
+    {
+      "name": "Leaving The Heat On When You Go Out"
+    },
+    {
+      "name": "Skipping Meals"
+    },
+    {
+      "name": "YouTube"
+    },
+    {
+      "name": "Not Showering"
+    },
+    {
+      "name": "Yelling At Your BF/GF"
+    },
+    {
+      "name": "Talking About Your Sister Behind Her Back"
+    },
+    {
+      "name": "Picking Scabs"
+    },
+    {
+      "name": "Popping Zits"
+    },
+    {
+      "name": "Losing Your Temper"
+    },
+    {
+      "name": "Complaining"
+    },
+    {
+      "name": "Annoying People On Purpose"
+    },
+    {
+      "name": "Being Overly Critical"
+    },
+    {
+      "name": "Being Argumentative"
+    },
+    {
+      "name": "Putting Dishes In Sink And Not Washing Them"
+    },
+    {
+      "name": "Quora"
+    },
+    {
+      "name": "Biting Your Lips"
+    },
+    {
+      "name": "Scratching An Itch"
+    },
+    {
+      "name": "Being An Attention Hog"
+    },
+    {
+      "name": "Opening Countless Tabs"
+    },
+    {
+      "name": "Buzz-friggin’-feed"
+    },
+    {
+      "name": "Trolling Comments"
+    },
+    {
+      "name": "Watching Seinfeld Reruns"
+    },
+    {
+      "name": "Binge Watching Netflix"
+    },
+    {
+      "name": "Emotional Eating"
+    },
+    {
+      "name": "Fiddling With Your Hair"
+    },
+    {
+      "name": "Poor Hygiene"
+    },
+    {
+      "name": "Fiddling With Keys"
+    },
+    {
+      "name": "Cheek Biting"
+    },
+    {
+      "name": "Chewing On Your Hair"
+    },
+    {
+      "name": "Shoplifting"
+    },
+    {
+      "name": "m&m’s"
+    },
+    {
+      "name": "Pocari Sweat From Japan (seriously, if you drink this for 2 or 3 days your body will crave it instead of water)"
+    },
+    {
+      "name": "Hair Pulling"
+    },
+    {
+      "name": "Scratching / Itching"
+    },
+    {
+      "name": "Biting Your Disgusting Toe Nails"
+    },
+    {
+      "name": "Eating When You Are Bored"
+    },
+    {
+      "name": "Hoarding"
+    },
+    {
+      "name": "Being A Know-It-All"
+    },
+    {
+      "name": "Bragging"
+    },
+    {
+      "name": "Chewing Tobacco"
+    },
+    {
+      "name": "Chewing With Mouth Open"
+    },
+    {
+      "name": "Being Late"
+    },
+    {
+      "name": "Eavesdropping"
+    },
+    {
+      "name": "Exaggerating"
+    },
+    {
+      "name": "Excessive Throat Clearing"
+    },
+    {
+      "name": "Fidgeting"
+    },
+    {
+      "name": "Flaking Out"
+    },
+    {
+      "name": "Freeloading"
+    },
+    {
+      "name": "Gambling"
+    },
+    {
+      "name": "Grinding Your Teeth"
+    },
+    {
+      "name": "Kissing & Telling"
+    },
+    {
+      "name": "Littering (really, stop littering)"
+    },
+    {
+      "name": "Monopolizing A Conversation"
+    },
+    {
+      "name": "Name Dropping"
+    },
+    {
+      "name": "One-Upping"
+    },
+    {
+      "name": "Pencil Chewing"
+    },
+    {
+      "name": "Popping Gum"
+    },
+    {
+      "name": "Speeding"
+    },
+    {
+      "name": "Talking During Movies"
+    },
+    {
+      "name": "Tapping Fingers/Pens/Etc."
+    },
+    {
+      "name": "Thumb Sucking"
+    },
+    {
+      "name": "Whining"
+    },
+    {
+      "name": "Borrowing And Not Returning Items"
+    },
+    {
+      "name": "Belching"
+    },
+    {
+      "name": "Loitering"
+    },
+    {
+      "name": "Bullying People"
+    },
+    {
+      "name": "Copying"
+    },
+    {
+      "name": "Gossiping"
+    },
+    {
+      "name": "Finishing People’s Sentences"
+    },
+    {
+      "name": "Leaving The Toilet Seat Up"
+    },
+    {
+      "name": "Licking Your Fingers"
+    }
+  ]
+}
