@@ -1,4 +1,4 @@
-package com.projectblejder.letsquit
+package com.projectblejder.letsquit.shared
 
 import android.support.v7.app.AppCompatActivity
 

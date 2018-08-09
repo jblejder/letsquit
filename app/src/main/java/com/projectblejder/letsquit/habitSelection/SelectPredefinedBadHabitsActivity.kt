@@ -1,8 +1,11 @@
-package com.projectblejder.letsquit
+package com.projectblejder.letsquit.habitSelection
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import com.google.gson.Gson
+import com.projectblejder.letsquit.shared.BaseActivity
+import com.projectblejder.letsquit.shared.Habit
+import com.projectblejder.letsquit.R
 import com.projectblejder.letsquit.databinding.SelectPredefinedBadHabbitActivityBinding
 
 class SelectPredefinedBadHabitsActivity : BaseActivity() {

@@ -1,8 +1,9 @@
-package com.projectblejder.letsquit
+package com.projectblejder.letsquit.habitSelection
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.projectblejder.letsquit.shared.Habit
 import com.projectblejder.letsquit.databinding.BadHabitListviewBinding
 
 class BadHabitsAdapter : RecyclerView.Adapter<BadHabitsAdapter.ViewHolder>() {
