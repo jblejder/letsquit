@@ -3,10 +3,12 @@ package com.projectblejder.letsquit.habitSelection
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.projectblejder.letsquit.shared.Habit
 import com.projectblejder.letsquit.databinding.BadHabitListviewBinding
+import com.projectblejder.letsquit.shared.Habit
 
 class BadHabitsAdapter : RecyclerView.Adapter<BadHabitsAdapter.ViewHolder>() {
+
+    var callback: ((habit: Habit) -> Unit)? = null
 
     var feed = emptyList<Habit>()
         set(value) {
@@ -15,7 +17,7 @@ class BadHabitsAdapter : RecyclerView.Adapter<BadHabitsAdapter.ViewHolder>() {
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int) =
-            ViewHolder.create(parent)
+            ViewHolder(BadHabitListviewBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     override fun getItemCount() = feed.size
 
@@ -23,13 +25,14 @@ class BadHabitsAdapter : RecyclerView.Adapter<BadHabitsAdapter.ViewHolder>() {
         viewHolder.bind(feed[index])
     }
 
-    class ViewHolder(val binding: BadHabitListviewBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: BadHabitListviewBinding) : RecyclerView.ViewHolder(binding.root) {
 
         var habit: Habit? = null
 
-        companion object {
-            fun create(parent: ViewGroup) =
-                    ViewHolder(BadHabitListviewBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        init {
+            binding.root.setOnClickListener { it ->
+                habit?.also { callback?.invoke(it) }
+            }
         }
 
         fun bind(habit: Habit) {
