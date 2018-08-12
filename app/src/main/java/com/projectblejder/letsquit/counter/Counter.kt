@@ -1,4 +1,4 @@
-package com.projectblejder.letsquit
+package com.projectblejder.letsquit.counter
 
 import android.content.Context
 import android.content.SharedPreferences

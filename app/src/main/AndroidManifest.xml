@@ -14,7 +14,7 @@
 
         <activity android:name=".habitSelection.SelectPredefinedBadHabitsActivity" />
 
-        <activity android:name=".CounterActivity" />
+        <activity android:name=".counter.CounterActivity" />
 
         <activity android:name=".introduction.IntroductionActivity">
             <intent-filter>
