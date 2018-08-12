@@ -8,6 +8,7 @@
         <variable
             name="model"
             type="com.projectblejder.letsquit.counter.CounterViewModel" />
+
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -50,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="150dp"
+            android:text="@{model.day}"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,6 +63,7 @@
             android:id="@+id/habitName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{model.habitName}"
             app:layout_constraintBottom_toBottomOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{model.counter}"
+            android:text="@{String.valueOf(model.counter)}"
             android:textSize="35sp"
             app:layout_constraintBottom_toBottomOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"

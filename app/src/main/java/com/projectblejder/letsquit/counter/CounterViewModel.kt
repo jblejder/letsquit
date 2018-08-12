@@ -1,13 +1,14 @@
 package com.projectblejder.letsquit.counter
 
-import android.databinding.BaseObservable
 import android.databinding.Bindable
-import android.databinding.Observable
-import com.projectblejder.letsquit.BR
 import com.projectblejder.letsquit.shared.MyHabit
-import kotlin.reflect.KProperty
+import com.projectblejder.letsquit.shared.framework.Clock
+import com.projectblejder.letsquit.shared.framework.binding.BaseBindableModel
+import com.projectblejder.letsquit.shared.framework.binding.Bind
+import org.joda.time.DateTime
+import org.joda.time.DurationFieldType
 
-class CounterViewModel(val habit: MyHabit) : VMObservable by VMObservableImp() {
+class CounterViewModel(val clock: Clock, val habit: MyHabit) : BaseBindableModel() {
 
     @get:Bindable
     var counter by Bind(0)
@@ -16,7 +17,9 @@ class CounterViewModel(val habit: MyHabit) : VMObservable by VMObservableImp() {
     var habitName by Bind("")
 
     @get:Bindable
-    var date by Bind("Today")
+    var day by Bind("Today")
+
+    var selectedDate = clock.now()
 
     init {
         habit.habit?.also {
@@ -24,21 +27,22 @@ class CounterViewModel(val habit: MyHabit) : VMObservable by VMObservableImp() {
             habitName = it.name
         }
     }
-}
 
-interface VMObservable : Observable {
-    fun notifyPropertyChanged(fieldId: Int)
-}
+    fun nextDay() {
+        setNewDay(selectedDate.withFieldAdded(DurationFieldType.days(), 1))
+    }
 
-class VMObservableImp : BaseObservable(), VMObservable
+    fun previousDate() {
+        setNewDay(selectedDate.withFieldAdded(DurationFieldType.days(), -1))
+    }
 
-class Bind<P : VMObservable, T>(var value: T) {
-    operator fun getValue(parent: P, property: KProperty<*>): T = value
+    private fun setNewDay(dateTime: DateTime) {
 
-    operator fun setValue(parent: P, property: KProperty<*>, i: T) {
-        val field = BR::class.java.getField(property.name)
-        val id = field.get(null) as? Int ?: 0
-        parent.notifyPropertyChanged(id)
+        selectedDate = dateTime
+        day = when (clock.isToday(dateTime)) {
+            true -> "Today"
+            else -> dateTime.toString("yyyy-MM-dd")
+        }
     }
 }
 

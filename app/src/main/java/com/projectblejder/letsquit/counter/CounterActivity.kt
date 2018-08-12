@@ -7,6 +7,7 @@ import com.projectblejder.letsquit.databinding.CounterActivityBinding
 import com.projectblejder.letsquit.shared.BaseActivity
 import com.projectblejder.letsquit.shared.MyHabit
 import com.projectblejder.letsquit.shared.extensions.click
+import com.projectblejder.letsquit.shared.framework.SystemClock
 
 class CounterActivity : BaseActivity() {
 
@@ -14,31 +15,26 @@ class CounterActivity : BaseActivity() {
 
     lateinit var counter: Counter
 
-    val viewModel = CounterViewModel()
+    lateinit var viewModel: CounterViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.counter_activity)
 
+        viewModel = CounterViewModel(SystemClock(), MyHabit(this))
+
         counter = Counter(this)
 
-        binding.habitName.text = MyHabit(this).habit?.name ?: "No habit :("
-        binding.counter.text = "${counter.number}"
-
-        binding.root.setOnClickListener {
-            counter.number = counter.number + 1
-            binding.counter.text = "${counter.number}"
-        }
-
         setUpClicks()
+        binding.model = viewModel
     }
 
     private fun setUpClicks() {
         binding.plusButton.click { }
         binding.minusButton.click { }
         binding.editButton.click { }
-        binding.nextDayButton.click { }
-        binding.prevDayButton.click { }
+        binding.nextDayButton.click { viewModel.nextDay() }
+        binding.prevDayButton.click { viewModel.previousDate() }
     }
 }
 
