@@ -16,13 +16,16 @@ class MyHabit(val context: Context) {
     private fun setMyHabit(value: Habit?) {
         prefs.edit().also {
             it.putString("my-habit", value?.name)
+            it.putInt("my-habit-amount", value?.amount ?: 0)
             it.apply()
         }
 
     }
 
     private fun getMyHabit(): Habit? {
-        return prefs.getString("my-habit", null)?.let { Habit(it) }
+        val name = prefs.getString("my-habit", null) ?: return null
+        val amount = prefs.getInt("my-habit-amount", 0)
+        return Habit(name, amount)
     }
 
 }

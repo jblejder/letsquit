@@ -4,9 +4,10 @@ import android.databinding.BaseObservable
 import android.databinding.Bindable
 import android.databinding.Observable
 import com.projectblejder.letsquit.BR
+import com.projectblejder.letsquit.shared.MyHabit
 import kotlin.reflect.KProperty
 
-class CounterViewModel : VMObservable by VMObservableImp() {
+class CounterViewModel(val habit: MyHabit) : VMObservable by VMObservableImp() {
 
     @get:Bindable
     var counter by Bind(0)
@@ -17,6 +18,12 @@ class CounterViewModel : VMObservable by VMObservableImp() {
     @get:Bindable
     var date by Bind("Today")
 
+    init {
+        habit.habit?.also {
+            counter = it.amount
+            habitName = it.name
+        }
+    }
 }
 
 interface VMObservable : Observable {
