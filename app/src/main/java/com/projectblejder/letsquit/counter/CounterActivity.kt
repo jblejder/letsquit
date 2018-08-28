@@ -23,7 +23,7 @@ class CounterActivity : BaseActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.counter_activity)
 
         counter = Counter(boxStore)
-        viewModel = CounterViewModel(SystemClock(), MyHabit(boxStore))
+        viewModel = CounterViewModel(SystemClock(), MyHabit(boxStore), counter)
 
 
         setUpClicks()
@@ -31,8 +31,8 @@ class CounterActivity : BaseActivity() {
     }
 
     private fun setUpClicks() {
-        binding.plusButton.click { }
-        binding.minusButton.click { }
+        binding.plusButton.click { viewModel.increment(1) }
+        binding.minusButton.click { viewModel.increment(-1) }
         binding.editButton.click { }
         binding.nextDayButton.click { viewModel.nextDay() }
         binding.prevDayButton.click { viewModel.previousDate() }
