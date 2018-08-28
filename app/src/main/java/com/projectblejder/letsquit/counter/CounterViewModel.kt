@@ -22,10 +22,9 @@ class CounterViewModel(val clock: Clock, val habit: MyHabit) : BaseBindableModel
     var selectedDate = clock.now()
 
     init {
-        habit.habit?.also {
-            counter = it.amount
+        habit.getMyHabit?.also {
             habitName = it.name
-        }
+        } ?: throw IllegalStateException("Habit is not yet selected")
     }
 
     fun nextDay() {

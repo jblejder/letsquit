@@ -1,12 +1,12 @@
 package com.projectblejder.letsquit.counter
 
-import android.content.Context
-import android.content.SharedPreferences
+import com.projectblejder.letsquit.shared.models.Amount
+import io.objectbox.BoxStore
+import io.objectbox.kotlin.boxFor
 
-class Counter(val context: Context) {
+class Counter(store: BoxStore) {
 
-    private val prefs: SharedPreferences
-        get() = context.getSharedPreferences("user-data", Context.MODE_PRIVATE)
+    val box = store.boxFor<Amount>()
 
 
     var number: Int
@@ -14,15 +14,12 @@ class Counter(val context: Context) {
         set(value) = setMyHabit(value)
 
     private fun setMyHabit(value: Int) {
-        prefs.edit().also {
-            it.putInt("counter", value)
-            it.apply()
-        }
+
 
     }
 
     private fun getMyHabit(): Int {
-        return prefs.getInt("counter", 0)
+        return 5
     }
 
 }

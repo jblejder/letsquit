@@ -8,8 +8,8 @@ import com.google.gson.Gson
 import com.projectblejder.letsquit.R
 import com.projectblejder.letsquit.databinding.SelectPredefinedBadHabbitActivityBinding
 import com.projectblejder.letsquit.shared.BaseActivity
-import com.projectblejder.letsquit.shared.Habit
 import com.projectblejder.letsquit.shared.extensions.COMMON_DATA
+import com.projectblejder.letsquit.shared.models.Habit
 
 
 class SelectPredefinedBadHabitsActivity : BaseActivity() {

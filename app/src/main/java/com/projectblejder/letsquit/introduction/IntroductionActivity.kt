@@ -4,9 +4,13 @@ import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import com.projectblejder.letsquit.R
+import com.projectblejder.letsquit.counter.CounterActivity
 import com.projectblejder.letsquit.databinding.IntroductionActivityBinding
 import com.projectblejder.letsquit.habitSelection.NameBadHabitActivity
 import com.projectblejder.letsquit.shared.BaseActivity
+import com.projectblejder.letsquit.shared.MyHabit
+import com.projectblejder.letsquit.shared.boxStore
+import org.jetbrains.anko.startActivity
 
 class IntroductionActivity : BaseActivity() {
 
@@ -15,6 +19,12 @@ class IntroductionActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.introduction_activity)
+
+        if (MyHabit(boxStore).isHabitSelected) {
+            startActivity<CounterActivity>()
+            finish()
+            return
+        }
 
         binding.startButton.setOnClickListener {
             startActivity(Intent(this, NameBadHabitActivity::class.java))

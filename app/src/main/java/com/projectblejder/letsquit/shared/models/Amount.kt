@@ -1,13 +1,10 @@
-package com.projectblejder.letsquit.infrastructure
+package com.projectblejder.letsquit.shared.models
 
+import io.objectbox.annotation.Entity
 import io.objectbox.annotation.Id
 import io.objectbox.relation.ToOne
 
-data class Habit(
-        @Id var id: Long = 0,
-        var name: String = ""
-)
-
+@Entity
 data class Amount(
         @Id var id: Long = 0,
         var date: String = "",

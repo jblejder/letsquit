@@ -1,31 +1,29 @@
 package com.projectblejder.letsquit.shared
 
-import android.content.Context
-import android.content.SharedPreferences
+import com.projectblejder.letsquit.shared.models.Habit
+import io.objectbox.BoxStore
+import io.objectbox.kotlin.boxFor
 
-class MyHabit(val context: Context) {
+class MyHabit(store: BoxStore) {
 
-    private val prefs: SharedPreferences
-        get() = context.getSharedPreferences("user-data", Context.MODE_PRIVATE)
+    private val box = store.boxFor<Habit>()
 
+    val isHabitSelected: Boolean
+        get() = box.count() > 0
 
-    var habit: Habit?
-        get() = getMyHabit()
-        set(value) = setMyHabit(value)
-
-    private fun setMyHabit(value: Habit?) {
-        prefs.edit().also {
-            it.putString("my-habit", value?.name)
-            it.putInt("my-habit-amount", value?.amount ?: 0)
-            it.apply()
+    fun selectMyBadHabit(habit: Habit) {
+        if (box.count() > 1) {
+            throw IllegalStateException("currently there is only one habit at time supported")
         }
-
+        box.put(habit)
     }
 
-    private fun getMyHabit(): Habit? {
-        val name = prefs.getString("my-habit", null) ?: return null
-        val amount = prefs.getInt("my-habit-amount", 0)
-        return Habit(name, amount)
-    }
-
+    val getMyHabit: Habit?
+        get() {
+            val all = box.all
+            if (all.isEmpty()) {
+                return null
+            }
+            return all[0]
+        }
 }

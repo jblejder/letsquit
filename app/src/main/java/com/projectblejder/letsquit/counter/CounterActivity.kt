@@ -6,6 +6,7 @@ import com.projectblejder.letsquit.R
 import com.projectblejder.letsquit.databinding.CounterActivityBinding
 import com.projectblejder.letsquit.shared.BaseActivity
 import com.projectblejder.letsquit.shared.MyHabit
+import com.projectblejder.letsquit.shared.boxStore
 import com.projectblejder.letsquit.shared.extensions.click
 import com.projectblejder.letsquit.shared.framework.SystemClock
 
@@ -21,9 +22,9 @@ class CounterActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.counter_activity)
 
-        viewModel = CounterViewModel(SystemClock(), MyHabit(this))
+        counter = Counter(boxStore)
+        viewModel = CounterViewModel(SystemClock(), MyHabit(boxStore))
 
-        counter = Counter(this)
 
         setUpClicks()
         binding.model = viewModel

@@ -8,9 +8,10 @@ import com.projectblejder.letsquit.R
 import com.projectblejder.letsquit.counter.CounterActivity
 import com.projectblejder.letsquit.databinding.NameBadHabitActivityBinding
 import com.projectblejder.letsquit.shared.BaseActivity
-import com.projectblejder.letsquit.shared.Habit
 import com.projectblejder.letsquit.shared.MyHabit
+import com.projectblejder.letsquit.shared.boxStore
 import com.projectblejder.letsquit.shared.extensions.COMMON_DATA
+import com.projectblejder.letsquit.shared.models.Habit
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
 
@@ -33,11 +34,15 @@ class NameBadHabitActivity : BaseActivity() {
         binding.startButton.setOnClickListener {
             val habitName = binding.inputText.text?.toString() ?: ""
             if (habitName.isNotEmpty()) {
-                MyHabit(this).habit = Habit(habitName)
-                startActivity<CounterActivity>()
-                finish()
+                selectBadHabit(habitName)
             }
         }
+    }
+
+    private fun selectBadHabit(name: String) {
+        MyHabit(boxStore).selectMyBadHabit(Habit(name = name))
+        startActivity<CounterActivity>()
+        finish()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

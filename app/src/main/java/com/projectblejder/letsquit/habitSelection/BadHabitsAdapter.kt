@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.projectblejder.letsquit.databinding.BadHabitListviewBinding
-import com.projectblejder.letsquit.shared.Habit
+import com.projectblejder.letsquit.shared.models.Habit
 
 class BadHabitsAdapter : RecyclerView.Adapter<BadHabitsAdapter.ViewHolder>() {
 
