@@ -1,15 +1,16 @@
 package com.projectblejder.letsquit.habitSelection
 
+import android.app.Activity
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import com.google.gson.Gson
-import com.projectblejder.letsquit.counter.CounterActivity
 import com.projectblejder.letsquit.R
 import com.projectblejder.letsquit.databinding.SelectPredefinedBadHabbitActivityBinding
 import com.projectblejder.letsquit.shared.BaseActivity
 import com.projectblejder.letsquit.shared.Habit
-import com.projectblejder.letsquit.shared.MyHabit
+import com.projectblejder.letsquit.shared.extensions.COMMON_DATA
+
 
 class SelectPredefinedBadHabitsActivity : BaseActivity() {
 
@@ -24,11 +25,7 @@ class SelectPredefinedBadHabitsActivity : BaseActivity() {
             feed = habits
         }
         binding.recyclerView.adapter = adapter
-        adapter.callback = {
-            MyHabit(this).habit = it
-            startActivity(Intent(this, CounterActivity::class.java))
-            finish()
-        }
+        adapter.callback = ::habitSelected
     }
 
     //    TODO: read async
@@ -44,8 +41,15 @@ class SelectPredefinedBadHabitsActivity : BaseActivity() {
         return Gson().fromJson(builder.toString(), Habits::class.java).habits
     }
 
+    private fun habitSelected(habit: Habit) {
+        val intent = Intent().apply {
+            putExtra(COMMON_DATA, habit.name)
+        }
+        setResult(Activity.RESULT_OK, intent)
+        finish()
+    }
+
     private class Habits {
         var habits: List<Habit> = emptyList()
     }
 }
-

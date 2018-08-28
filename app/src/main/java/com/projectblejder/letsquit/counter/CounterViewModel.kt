@@ -37,7 +37,6 @@ class CounterViewModel(val clock: Clock, val habit: MyHabit) : BaseBindableModel
     }
 
     private fun setNewDay(dateTime: DateTime) {
-
         selectedDate = dateTime
         day = when (clock.isToday(dateTime)) {
             true -> "Today"
