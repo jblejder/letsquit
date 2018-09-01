@@ -10,7 +10,11 @@ import com.projectblejder.letsquit.shared.models.Habit
 import org.joda.time.DateTime
 import org.joda.time.DurationFieldType
 
-class CounterViewModel(val clock: Clock, val habit: MyHabit, val counterr: Counter) : BaseBindableModel() {
+class CounterViewModel(
+        val clock: Clock,
+        val habit: MyHabit,
+        val counterr: Counter
+) : BaseBindableModel() {
 
     @get:Bindable
     var counter by Bind(0L)
@@ -26,12 +30,12 @@ class CounterViewModel(val clock: Clock, val habit: MyHabit, val counterr: Count
     private val myHabit: Habit
     private var amount: Amount
 
+    var data = emptyList<Pair<Int, Int>>()
 
     init {
         myHabit = habit.getMyHabit?.also {
             habitName = it.name
         } ?: throw IllegalStateException("Habit is not yet selected")
-
 
         amount = counterr.getAmountFor(myHabit, selectedDate)
         counter = amount.amount

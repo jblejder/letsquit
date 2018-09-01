@@ -2,6 +2,9 @@ package com.projectblejder.letsquit.counter
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
 import com.projectblejder.letsquit.R
 import com.projectblejder.letsquit.databinding.CounterActivityBinding
 import com.projectblejder.letsquit.shared.BaseActivity
@@ -9,6 +12,7 @@ import com.projectblejder.letsquit.shared.MyHabit
 import com.projectblejder.letsquit.shared.boxStore
 import com.projectblejder.letsquit.shared.extensions.click
 import com.projectblejder.letsquit.shared.framework.SystemClock
+import org.joda.time.DateTime
 
 class CounterActivity : BaseActivity() {
 
@@ -23,11 +27,19 @@ class CounterActivity : BaseActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.counter_activity)
 
         counter = Counter(boxStore)
-        viewModel = CounterViewModel(SystemClock(), MyHabit(boxStore), counter)
+        viewModel = CounterViewModel(SystemClock, MyHabit(boxStore, SystemClock), counter)
 
 
         setUpClicks()
         binding.model = viewModel
+
+
+        val dataSet = LineDataSet(listOf(
+                Entry(DateTime.now().millis.toFloat(), 10f)
+        ), "data")
+
+        binding.chart.data = LineData(dataSet)
+        binding.chart.invalidate()
     }
 
     private fun setUpClicks() {

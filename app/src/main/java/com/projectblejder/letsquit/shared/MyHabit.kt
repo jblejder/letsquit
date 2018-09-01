@@ -1,21 +1,27 @@
 package com.projectblejder.letsquit.shared
 
+import com.projectblejder.letsquit.shared.framework.Clock
 import com.projectblejder.letsquit.shared.models.Habit
+import com.projectblejder.letsquit.shared.models.HabitMetadata
 import io.objectbox.BoxStore
 import io.objectbox.kotlin.boxFor
 
-class MyHabit(store: BoxStore) {
+class MyHabit(store: BoxStore, val clock: Clock) {
 
     private val box = store.boxFor<Habit>()
+    private val metaBox = store.boxFor<HabitMetadata>()
 
     val isHabitSelected: Boolean
         get() = box.count() > 0
 
-    fun selectMyBadHabit(habit: Habit) {
+    fun createBadHabit(habit: Habit) {
         if (box.count() > 1) {
             throw IllegalStateException("currently there is only one habit at time supported")
         }
         box.put(habit)
+        metaBox.put(HabitMetadata(startDate = clock.now().toDate().toString()).also {
+            it.habit.target = habit
+        })
     }
 
     val getMyHabit: Habit?

@@ -46,7 +46,7 @@
     },
     {
       "id": "3:3397951216584348093",
-      "lastPropertyId": "3:2211781032406935428",
+      "lastPropertyId": "2:2603212507727654133",
       "name": "HabitMetadata",
       "properties": [
         {
@@ -56,18 +56,13 @@
         {
           "id": "2:2603212507727654133",
           "name": "startDate"
-        },
-        {
-          "id": "3:2211781032406935428",
-          "indexId": "2:5285990195776772421",
-          "name": "habitId"
         }
       ],
       "relations": []
     }
   ],
   "lastEntityId": "3:3397951216584348093",
-  "lastIndexId": "2:5285990195776772421",
+  "lastIndexId": "1:4852226731890862149",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 4,

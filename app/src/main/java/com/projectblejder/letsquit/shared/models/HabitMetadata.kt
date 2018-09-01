@@ -5,11 +5,9 @@ import io.objectbox.annotation.Id
 import io.objectbox.relation.ToOne
 
 @Entity
-data class Amount(
+data class HabitMetadata(
         @Id var id: Long = 0,
-        var date: String = "",
-        var amount: Long = 0
+        var startDate: String = ""
 ) {
     lateinit var habit: ToOne<Habit>
 }
-

@@ -10,6 +10,7 @@ import com.projectblejder.letsquit.habitSelection.NameBadHabitActivity
 import com.projectblejder.letsquit.shared.BaseActivity
 import com.projectblejder.letsquit.shared.MyHabit
 import com.projectblejder.letsquit.shared.boxStore
+import com.projectblejder.letsquit.shared.framework.SystemClock
 import org.jetbrains.anko.startActivity
 
 class IntroductionActivity : BaseActivity() {
@@ -20,7 +21,7 @@ class IntroductionActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.introduction_activity)
 
-        if (MyHabit(boxStore).isHabitSelected) {
+        if (MyHabit(boxStore, SystemClock).isHabitSelected) {
             startActivity<CounterActivity>()
             finish()
             return

@@ -11,6 +11,7 @@ import com.projectblejder.letsquit.shared.BaseActivity
 import com.projectblejder.letsquit.shared.MyHabit
 import com.projectblejder.letsquit.shared.boxStore
 import com.projectblejder.letsquit.shared.extensions.COMMON_DATA
+import com.projectblejder.letsquit.shared.framework.SystemClock
 import com.projectblejder.letsquit.shared.models.Habit
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
@@ -40,7 +41,7 @@ class NameBadHabitActivity : BaseActivity() {
     }
 
     private fun selectBadHabit(name: String) {
-        MyHabit(boxStore).selectMyBadHabit(Habit(name = name))
+        MyHabit(boxStore, SystemClock).createBadHabit(Habit(name = name))
         startActivity<CounterActivity>()
         finish()
     }

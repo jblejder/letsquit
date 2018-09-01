@@ -2,7 +2,7 @@ package com.projectblejder.letsquit.shared.framework
 
 import org.joda.time.DateTime
 
-class SystemClock : Clock {
+object SystemClock : Clock {
 
     override fun isSameDay(d1: DateTime, d2: DateTime) = d1.toLocalDate() == d2.toLocalDate()
 
