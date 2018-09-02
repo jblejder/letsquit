@@ -1,6 +1,5 @@
 package com.projectblejder.letsquit.introduction
 
-import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import com.projectblejder.letsquit.R
@@ -28,7 +27,7 @@ class IntroductionActivity : BaseActivity() {
         }
 
         binding.startButton.setOnClickListener {
-            startActivity(Intent(this, NameBadHabitActivity::class.java))
+            startActivity<NameBadHabitActivity>()
             finish()
         }
     }

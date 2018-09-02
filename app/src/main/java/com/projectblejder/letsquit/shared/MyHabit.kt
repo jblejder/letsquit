@@ -19,7 +19,7 @@ class MyHabit(store: BoxStore, val clock: Clock) {
             throw IllegalStateException("currently there is only one habit at time supported")
         }
         box.put(habit)
-        metaBox.put(HabitMetadata(startDate = clock.now().toDate().toString()).also {
+        metaBox.put(HabitMetadata(startDate = clock.now().toString()).also {
             it.habit.target = habit
         })
     }

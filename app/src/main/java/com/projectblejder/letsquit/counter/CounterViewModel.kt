@@ -58,7 +58,12 @@ class CounterViewModel(
 
         amount = counterr.getAmountFor(myHabit, selectedDate)
         counter = amount.amount
+
+        val set = counterr.getDaysSet(myHabit, selectedDate.plusDays(3), selectedDate.minusDays(3))
+        callback?.invoke(set)
     }
+
+    var callback: ((List<Amount>) -> Unit)? = null
 
     fun increment(i: Int) {
         counter += i

@@ -38,8 +38,11 @@ class CounterActivity : BaseActivity() {
                 Entry(DateTime.now().millis.toFloat(), 10f)
         ), "data")
 
-        binding.chart.data = LineData(dataSet)
-        binding.chart.invalidate()
+        viewModel.callback = {
+            val data = it.map { Entry(it.day.toFloat(), it.amount.toFloat()) }
+            binding.chart.data = LineData(LineDataSet(data, "data"))
+            binding.chart.invalidate()
+        }
     }
 
     private fun setUpClicks() {

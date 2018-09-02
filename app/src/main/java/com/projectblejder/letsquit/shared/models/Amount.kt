@@ -7,7 +7,7 @@ import io.objectbox.relation.ToOne
 @Entity
 data class Amount(
         @Id var id: Long = 0,
-        var date: String = "",
+        var day: Long = 0,
         var amount: Long = 0
 ) {
     lateinit var habit: ToOne<Habit>
