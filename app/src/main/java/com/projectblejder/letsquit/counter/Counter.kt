@@ -6,8 +6,10 @@ import io.objectbox.kotlin.boxFor
 import io.objectbox.kotlin.query
 import org.joda.time.DateTime
 import org.joda.time.Days
+import javax.inject.Inject
 
-class Counter(store: BoxStore) {
+
+class Counter @Inject constructor(store: BoxStore) {
 
     private val box = store.boxFor<Amount>()
     private val meta = store.boxFor<HabitMetadata>()

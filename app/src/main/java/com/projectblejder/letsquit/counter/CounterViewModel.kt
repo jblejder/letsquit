@@ -9,8 +9,10 @@ import com.projectblejder.letsquit.shared.models.Amount
 import com.projectblejder.letsquit.shared.models.Habit
 import org.joda.time.DateTime
 import org.joda.time.DurationFieldType
+import javax.inject.Inject
 
-class CounterViewModel(
+class CounterViewModel
+@Inject constructor(
         val clock: Clock,
         val habit: MyHabit,
         val counterr: Counter

@@ -5,8 +5,9 @@ import com.projectblejder.letsquit.shared.models.Habit
 import com.projectblejder.letsquit.shared.models.HabitMetadata
 import io.objectbox.BoxStore
 import io.objectbox.kotlin.boxFor
+import javax.inject.Inject
 
-class MyHabit(store: BoxStore, val clock: Clock) {
+class MyHabit @Inject constructor(store: BoxStore, val clock: Clock) {
 
     private val box = store.boxFor<Habit>()
     private val metaBox = store.boxFor<HabitMetadata>()

@@ -8,15 +8,21 @@ import com.projectblejder.letsquit.databinding.IntroductionActivityBinding
 import com.projectblejder.letsquit.habitSelection.NameBadHabitActivity
 import com.projectblejder.letsquit.shared.BaseActivity
 import com.projectblejder.letsquit.shared.MyHabit
-import com.projectblejder.letsquit.shared.boxStore
 import com.projectblejder.letsquit.shared.framework.SystemClock
+import dagger.android.AndroidInjection
+import io.objectbox.BoxStore
 import org.jetbrains.anko.startActivity
+import javax.inject.Inject
 
 class IntroductionActivity : BaseActivity() {
 
     lateinit var binding: IntroductionActivityBinding
 
+    @Inject
+    lateinit var boxStore: BoxStore
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.introduction_activity)
 

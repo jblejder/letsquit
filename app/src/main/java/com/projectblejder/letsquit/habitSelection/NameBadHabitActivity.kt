@@ -9,12 +9,14 @@ import com.projectblejder.letsquit.counter.CounterActivity
 import com.projectblejder.letsquit.databinding.NameBadHabitActivityBinding
 import com.projectblejder.letsquit.shared.BaseActivity
 import com.projectblejder.letsquit.shared.MyHabit
-import com.projectblejder.letsquit.shared.boxStore
 import com.projectblejder.letsquit.shared.extensions.COMMON_DATA
 import com.projectblejder.letsquit.shared.framework.SystemClock
 import com.projectblejder.letsquit.shared.models.Habit
+import dagger.android.AndroidInjection
+import io.objectbox.BoxStore
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
+import javax.inject.Inject
 
 class NameBadHabitActivity : BaseActivity() {
 
@@ -24,7 +26,11 @@ class NameBadHabitActivity : BaseActivity() {
         const val REQUEST_CODE = 42
     }
 
+    @Inject
+    lateinit var boxStore: BoxStore
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.name_bad_habit_activity)
 
