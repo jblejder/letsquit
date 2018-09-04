@@ -10,7 +10,6 @@ import com.projectblejder.letsquit.databinding.CounterActivityBinding
 import com.projectblejder.letsquit.shared.BaseActivity
 import com.projectblejder.letsquit.shared.extensions.click
 import dagger.android.AndroidInjection
-import org.joda.time.DateTime
 import javax.inject.Inject
 
 class CounterActivity : BaseActivity() {
@@ -27,6 +26,42 @@ class CounterActivity : BaseActivity() {
 
         setUpClicks()
         binding.model = viewModel
+
+
+        binding.chart.also {
+            it.setDrawGridBackground(false)
+            it.legend.isEnabled = false
+            it.description = null
+            it.axisLeft.also {
+                it.isEnabled = false
+                it.setDrawGridLines(false)
+                it.setDrawLabels(false)
+            }
+            it.axisRight.also {
+                it.isEnabled = false
+                it.setDrawGridLines(false)
+                it.setDrawLabels(false)
+            }
+            it.xAxis.also {
+                it.isEnabled = false
+                it.setDrawGridLines(false)
+                it.setDrawLabels(false)
+            }
+        }
+
+
+        val data = viewModel.data.mapIndexed { index, i -> Entry(index.toFloat(), i.toFloat()) }
+
+        binding.chart.data = LineData(LineDataSet(data, "").also {
+            it.isHighlightEnabled = false
+            it.lineWidth = 5f
+            it.setDrawCircles(false)
+        }).also {
+            it.setDrawValues(false)
+        }
+
+
+        binding.chart.invalidate()
 
         viewModel.callback = {
             val data = it.map { Entry(it.day.toFloat(), it.amount.toFloat()) }

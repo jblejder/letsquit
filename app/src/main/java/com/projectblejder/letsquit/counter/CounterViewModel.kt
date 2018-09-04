@@ -32,7 +32,7 @@ class CounterViewModel
     private val myHabit: Habit
     private var amount: Amount
 
-    var data = emptyList<Pair<Int, Int>>()
+    var data = listOf(20, 10, 15, 5, 0)
 
     init {
         myHabit = habit.getMyHabit?.also {
